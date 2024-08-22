@@ -1,9 +1,31 @@
+import { useState } from 'react'
+import { PlusCircle } from '@phosphor-icons/react'
+
+import styles from './App.module.css'
+
 import { Header } from './components/Header'
+import { Input } from './components/Input'
+import { Button } from './components/Button'
 
 function App() {
+  const [inputValue, setInputValue] = useState('')
+
   return (
     <main>
       <Header />
+
+      <section className={styles.content}>
+        <div className={styles.taskInfoContainer}>
+          <Input
+            onChange={(e) => setInputValue(e.target.value)}
+            value={inputValue}
+          />
+          <Button>
+            Criar
+            <PlusCircle size={16} color="#f2f2f2" weight="bold" />
+          </Button>
+        </div>
+      </section>
     </main>
   )
 }
