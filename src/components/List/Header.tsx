@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
 
 interface Props {
-  tasksCounter: 0
+  tasksCounter: number
   checkedTasksCounter: number
 }
 
