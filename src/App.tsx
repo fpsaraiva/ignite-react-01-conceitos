@@ -28,6 +28,12 @@ function App() {
     return prevValue
   }, 0)
 
+  function handleKeyPress(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
+      handleAddTask()
+    }
+  }
+
   function handleAddTask() {
     if (!inputValue) {
       return
@@ -74,6 +80,7 @@ function App() {
           <Input
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue}
+            onKeyPress={handleKeyPress}
           />
           <Button onClick={handleAddTask}>
             Criar
